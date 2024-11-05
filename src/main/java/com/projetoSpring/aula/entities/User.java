@@ -1,9 +1,17 @@
 package com.projetoSpring.aula.entities;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+
+@Entity
+@Table(name = "tb_user")                       // Renomeando nossa tabela User para tb_usser
 public class User implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)    // Informando que o id será auto increment
     private Long id;
     private String name;
     private String email;

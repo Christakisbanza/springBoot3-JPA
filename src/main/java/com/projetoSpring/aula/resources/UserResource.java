@@ -16,4 +16,5 @@ public class UserResource {
         User user  = new User(1L,"Itachi","Itachi@gmail.com", "41999","1234567");
         return ResponseEntity.ok().body(user);
     }
+
 }
