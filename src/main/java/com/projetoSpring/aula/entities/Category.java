@@ -3,7 +3,7 @@ package com.projetoSpring.aula.entities;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.util.Objects;
+import java.util.*;
 
 
 @Entity
@@ -13,12 +13,16 @@ public class Category implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
+    @Transient
+    private Set<Product> products = new HashSet<>();
+
 
     public Category(){
 
     }
-
     public Category(Long id, String name) {
         this.id = id;
         this.name = name;
@@ -35,6 +39,10 @@ public class Category implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hashCode(id);
+    }
+
+    public Set<Product> getProducts() {
+        return products;
     }
 
     public Long getId() {

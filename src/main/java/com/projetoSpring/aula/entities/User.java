@@ -16,6 +16,7 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)    // Informando que o id será auto increment
     private Long id;
+
     private String name;
     private String email;
     private String phone;
