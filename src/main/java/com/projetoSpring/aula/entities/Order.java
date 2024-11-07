@@ -58,6 +58,14 @@ public class Order implements Serializable {
         return Objects.hashCode(id);
     }
 
+    public Double getTotal(){
+        double soma = 0;
+        for (OrderItem i : orderItems){
+            soma += i.getSubTotal();
+        }
+        return soma ;
+    }
+
     public Payment getPayment() {
         return payment;
     }
